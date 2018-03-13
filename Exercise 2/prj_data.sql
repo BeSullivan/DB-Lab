@@ -1,0 +1,4 @@
+INSERT INTO Prj (Name) VALUES ('A');
+INSERT INTO Prj (Name) VALUES ('B');
+INSERT INTO Prj (Name) VALUES ('C');
+INSERT INTO Prj (Name) VALUES ('D');

@@ -1,0 +1,1 @@
+UPDATE prjMember SET eRole = 4 WHERE prj_id = 1 and emp_id = 17
