@@ -6,10 +6,21 @@ CREATE TABLE Book (
 	QTY	 INT
 );
 
-DELIMITER $$ 
+CREATE View BookView AS
+	SELECT *
+	From Book;
+
+CREATE OR REPLACE FUNCTION message() RETURNS trigger AS $$
+begin
+	RAISE EXCEPTION 'NO CHANGE';
+	RETURN NEW;
+end
+$$ LANGUAGE plpgsql;
+	
 CREATE TRIGGER NoChangeBook
-INSTEAD OF INSERT ON Book
-BEGIN
-	select "No Change";
-END;$$
-DELIMITER;
+	INSTEAD OF INSERT 
+	ON BookView
+	FOR EACH ROW	
+	execute procedure message();
+	
+insert into BookView(ID ,Bookname ,yearPublish ,authorName ,QTY) VALUES (22 ,'saeed' ,1997 ,'ali' ,2);
