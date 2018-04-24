@@ -1,2 +1,2 @@
 # DB-Lab
-Some Queries - PSQL
+Some Queries - Postgres SQL
